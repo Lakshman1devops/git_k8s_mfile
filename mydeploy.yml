@@ -1,21 +1,19 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: ReplicationController
 metadata:
-  name: myjavaapp-deploy
-  labels:
-    app: myjavaapp
+  name: myjavaapp_rc
 spec:
-  replicas: 3
+  replicas: 2
   selector:
-      matchLabels:
-         app: myjavaapp
+    app: myjavaapp
   template:
-     metadata:
-       labels:
-         app: myjavaapp
-     spec:
-       containers:
-       - name: myjavaapp-container
-         image:  lakshman9977/myjavaapp27mar:1
-         ports:
-         - containerPort: 8080
+    metadata:
+      name: myjavaapp
+      labels:
+        app: myjavaapp
+    spec:
+      containers:
+        - name: myjavacontainer
+          image: nginx
+          ports:
+            - containerPort: 80
