@@ -12,11 +12,11 @@ spec:
      metadata:
        labels:
           app: myonlinestore
-          version: 2.6.2
+          version: 2.6.1
           
      spec:
         containers:
         - name: myonlinestore-container   
-          image: maha4iac/mahaonlinestore:2
+          image: maha4iac/mahaonlinestore:1
           ports:
           - containerPort: 8080
