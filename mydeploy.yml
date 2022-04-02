@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: ReplicationController
 metadata:
-  name: myjavaapp_rc
+  name: myjavaapp-rc
 spec:
   replicas: 2
   selector:
-    app: myjavaapp
+    app: nginx
   template:
     metadata:
-      name: myjavaapp
+      name: nginx
       labels:
-        app: myjavaapp
+        app: nginx
     spec:
       containers:
         - name: myjavacontainer
